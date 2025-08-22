@@ -10,6 +10,7 @@ export default class extends BaseSchema {
       table.string('description')
       table.string('status')
       table.integer('priority')
+      table.integer('user_id').unsigned().references('id').inTable('users').onDelete('CASCADE')
 
       table.timestamp('created_at')
       table.timestamp('updated_at')
